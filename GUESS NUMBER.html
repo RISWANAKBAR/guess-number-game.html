@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<style>
+    #v {
+        height: 400px;
+    }
+    
+    h4 {
+        font-size: 50px;
+    }
+    
+    body {
+        background-image: url(https://cdn.windowsreport.com/wp-content/uploads/2020/06/Scrabble-1200x900.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    
+    #main1 {
+        background-color: darkkhaki;
+        border: solid black;
+        height: 400px;
+        border-radius: 20px;
+        background-image: url(https://static.vecteezy.com/system/resources/thumbnails/002/375/040/small/modern-white-background-free-vector.jpg);
+    }
+    
+    #extra {
+        height: 200px;
+    }
+    
+    #button1 {
+        background-color: burlywood;
+    }
+    
+    #result {
+        color: black;
+    }
+    
+    #result1 {
+        color: green;
+        font-size: 35px;
+        font-style: initial;
+    }
+    
+    #result2 {
+        color: red;
+        font-size: 35px;
+        font-style: initial;
+    }
+</style>
+
+<body>
+    <div>
+        <center>
+            <div id="v">
+                <!-- <header> Guess Number Game </header> -->
+                <div class="row" id="extra"></div>
+                <div class="row" id="main2">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-4" id="main1">
+                        <h4>Guess the Number Between 0 to 100</h4>
+                        <input type="text" id="num" placeholder="Guess the Number"><br><br>
+                        <button onclick="random()" id="button1"> Play</button><br><br>
+
+                        <button onclick=" reset1()"> Reset</button><br><br>
+                        <p id="result"></p>
+                        <p id="result1"></p>
+                        <p id="result2"></p>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </center>
+        <script>
+            count = 0
+            var a = (Math.floor(Math.random() * 100))
+
+
+            function random() {
+
+                var n = parseInt(document.getElementById("num").value)
+                count++
+                if (count <= 10) {
+                    if (n == a) {
+                        document.getElementById("result1").innerHTML = " congratulation you made it"
+                        document.getElementById("result").style.display = "none"
+
+                    } else if (n < a) {
+                        document.getElementById("result").innerHTML = " Try a Greater Number"
+                    } else if (n > a) {
+                        document.getElementById("result").innerHTML = " Try a Lesser Number"
+
+                    }
+                } else {
+                    document.getElementById("result2").innerHTML = " ohh!!!!  bad luck" + " " + a + " was the number !!!"
+                    document.getElementById("result").style.display = "none"
+                }
+            }
+
+            function reset1() {
+                location.reload()
+
+            }
+        </script>
+
+
+</body>
+
+</html>
